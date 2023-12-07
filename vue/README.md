@@ -7,6 +7,8 @@ vue学习脚本和工具集合，从v3开始学习
 #### 安装node
 ```bash
 # 官方文档：https://github.com/nodesource/distributions
+# 查看最新版本安装方式：https://rpm.nodesource.com/
+# 示例如下：
 curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
 sudo yum install -y nodejs
 ```
