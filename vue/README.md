@@ -12,6 +12,13 @@ vue学习脚本和工具集合，从v3开始学习
 curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
 sudo yum install -y nodejs
 ```
+
+#### 安装pnpm
+pnpm是用于解决npm的node_modules中包重复安装的问题，而推出的npm替代品
+```bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
 #### 安装vue
 ```bash
 sudo npm install vue@next
