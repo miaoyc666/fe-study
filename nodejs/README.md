@@ -21,3 +21,8 @@ brew install node
 npm install -g pnpm
 ```
 
+#### set npm source 
+```
+npm config set registry https://registry.npmjs.org/
+```
+
