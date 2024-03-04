@@ -5,12 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  axios:
+    specifier: ^1.6.7
+    version: 1.6.7
   core-js:
     specifier: ^3.8.3
     version: 3.36.0
   vue:
     specifier: ^3.2.13
     version: 3.4.20
+  vue-simple-uploader:
+    specifier: ^0.7.6
+    version: 0.7.6(vue@3.4.20)
 
 devDependencies:
   '@babel/core':
@@ -2469,6 +2475,10 @@ packages:
       lodash: 4.17.21
     dev: true
 
+  /asynckit@0.4.0:
+    resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=, tarball: http://r.npm.sankuai.com/asynckit/download/asynckit-0.4.0.tgz}
+    dev: false
+
   /at-least-node@1.0.0:
     resolution: {integrity: sha1-YCzUtG6EStTv/JKoARo8RuAjjcI=, tarball: http://r.npm.sankuai.com/at-least-node/download/at-least-node-1.0.0.tgz}
     engines: {node: '>= 4.0.0'}
@@ -2489,6 +2499,16 @@ packages:
       postcss: 8.4.35
       postcss-value-parser: 4.2.0
     dev: true
+
+  /axios@1.6.7:
+    resolution: {integrity: sha1-e0jC4nyW+caKL48x4qsZ9ZsGsKc=, tarball: http://r.npm.sankuai.com/axios/download/axios-1.6.7.tgz}
+    dependencies:
+      follow-redirects: 1.15.5(debug@4.3.4)
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /babel-loader@8.3.0(@babel/core@7.23.9)(webpack@5.90.3):
     resolution: {integrity: sha1-Ekk26EG6T+gXZ4bW/yit0fE01qg=, tarball: http://r.npm.sankuai.com/babel-loader/download/babel-loader-8.3.0.tgz}
@@ -2855,6 +2875,13 @@ packages:
   /colorette@2.0.20:
     resolution: {integrity: sha1-nreT5oMwZ/cjWQL807CZF6AAqVo=, tarball: http://r.npm.sankuai.com/colorette/download/colorette-2.0.20.tgz}
     dev: true
+
+  /combined-stream@1.0.8:
+    resolution: {integrity: sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=, tarball: http://r.npm.sankuai.com/combined-stream/download/combined-stream-1.0.8.tgz}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: false
 
   /commander@2.20.3:
     resolution: {integrity: sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=, tarball: http://r.npm.sankuai.com/commander/download/commander-2.20.3.tgz}
@@ -3360,7 +3387,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /deep-is@0.1.4:
     resolution: {integrity: sha1-pvLc5hL63S7x9Rm3NVHxfoUZmDE=, tarball: http://r.npm.sankuai.com/deep-is/download/deep-is-0.1.4.tgz}
@@ -3406,6 +3432,11 @@ packages:
       has-property-descriptors: 1.0.2
       object-keys: 1.1.1
     dev: true
+
+  /delayed-stream@1.0.0:
+    resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=, tarball: http://r.npm.sankuai.com/delayed-stream/download/delayed-stream-1.0.0.tgz}
+    engines: {node: '>=0.4.0'}
+    dev: false
 
   /depd@1.1.2:
     resolution: {integrity: sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=, tarball: http://r.npm.sankuai.com/depd/download/depd-1.1.2.tgz}
@@ -4006,7 +4037,15 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.4
-    dev: true
+
+  /form-data@4.0.0:
+    resolution: {integrity: sha1-k5Gdrq82HuUpWEubMWZNwSyfpFI=, tarball: http://r.npm.sankuai.com/form-data/download/form-data-4.0.0.tgz}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
 
   /forwarded@0.2.0:
     resolution: {integrity: sha1-ImmTZCiq1MFcfr6XeahL8LKoGBE=, tarball: http://r.npm.sankuai.com/forwarded/download/forwarded-0.2.0.tgz}
@@ -4868,14 +4907,12 @@ packages:
   /mime-db@1.52.0:
     resolution: {integrity: sha1-u6vNwChZ9JhzAchW4zh85exDv3A=, tarball: http://r.npm.sankuai.com/mime-db/download/mime-db-1.52.0.tgz}
     engines: {node: '>= 0.6'}
-    dev: true
 
   /mime-types@2.1.35:
     resolution: {integrity: sha1-OBqHG2KnNEUGYK497uRIE/cNlZo=, tarball: http://r.npm.sankuai.com/mime-types/download/mime-types-2.1.35.tgz}
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.52.0
-    dev: true
 
   /mime@1.6.0:
     resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: http://r.npm.sankuai.com/mime/download/mime-1.6.0.tgz}
@@ -4947,7 +4984,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=, tarball: http://r.npm.sankuai.com/ms/download/ms-2.1.2.tgz}
-    dev: true
 
   /ms@2.1.3:
     resolution: {integrity: sha1-V0yBOM4dK1hh8LRFedut1gxmFbI=, tarball: http://r.npm.sankuai.com/ms/download/ms-2.1.3.tgz}
@@ -5728,6 +5764,10 @@ packages:
       ipaddr.js: 1.9.1
     dev: true
 
+  /proxy-from-env@1.1.0:
+    resolution: {integrity: sha1-4QLxbKNVQkhldV0sno6k8k1Yw+I=, tarball: http://r.npm.sankuai.com/proxy-from-env/download/proxy-from-env-1.1.0.tgz}
+    dev: false
+
   /pseudomap@1.0.2:
     resolution: {integrity: sha1-8FKijacOYYkX7wqKw0wa5aaChrM=, tarball: http://r.npm.sankuai.com/pseudomap/download/pseudomap-1.0.2.tgz}
     dev: true
@@ -6142,6 +6182,10 @@ packages:
   /signal-exit@3.0.7:
     resolution: {integrity: sha1-qaF2f4r4QVURTqq9c/mSc8j1mtk=, tarball: http://r.npm.sankuai.com/signal-exit/download/signal-exit-3.0.7.tgz}
     dev: true
+
+  /simple-uploader.js@0.5.6:
+    resolution: {integrity: sha1-03uMAjg0izmTVBxyk66d5WWLI6A=, tarball: http://r.npm.sankuai.com/simple-uploader.js/download/simple-uploader.js-0.5.6.tgz}
+    dev: false
 
   /sirv@2.0.4:
     resolution: {integrity: sha1-XdmnJcV4405EnzMnA+sqdORqKbA=, tarball: http://r.npm.sankuai.com/sirv/download/sirv-2.0.4.tgz}
@@ -6741,6 +6785,16 @@ packages:
       watchpack: 2.4.0
       webpack: 5.90.3
     dev: true
+
+  /vue-simple-uploader@0.7.6(vue@3.4.20):
+    resolution: {integrity: sha1-LajOaZXAcBybFqy3Fxs1GDUJHQ4=, tarball: http://r.npm.sankuai.com/vue-simple-uploader/download/vue-simple-uploader-0.7.6.tgz}
+    engines: {node: '>= 4.0.0', npm: '>= 3.0.0'}
+    peerDependencies:
+      vue: '>=2.2'
+    dependencies:
+      simple-uploader.js: 0.5.6
+      vue: 3.4.20
+    dev: false
 
   /vue-style-loader@4.1.3:
     resolution: {integrity: sha1-bVWGOlH6dXqyTonZNxRlByqnvDU=, tarball: http://r.npm.sankuai.com/vue-style-loader/download/vue-style-loader-4.1.3.tgz}
