@@ -40,4 +40,13 @@ devServer: {
   }
 ```
 
+##### 5.vue中<script setup>表示什么?
+语法糖，<script setup> 是 Vue 3 引入的一种新的组件编写方式，它是一个编译时的语法糖，旨在让组件的 <script> 块更简洁。这种写法允许开发者以一种更直观和更少的样板代码来编写组件。
+官方文档链接：https://cn.vuejs.org/api/sfc-script-setup.html
+
+##### 6.打印日志
+```js
+console.log("xxx")
+```
+
 
