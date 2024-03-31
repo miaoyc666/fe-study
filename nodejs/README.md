@@ -19,6 +19,8 @@ brew install node
 # npm是随node一起安装的包管理器
 # pnpm是用于解决npm的node_modules中包重复安装的问题，而推出的npm替代品
 npm install -g pnpm
+# 卸载
+npm uninstall -g pnpm
 ```
 
 #### set npm source 
