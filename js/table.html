@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table Example</title>
+</head>
+<body>
+<script>
+    // 模拟一个异步请求
+    function fetchPosts() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([
+                    { Name: 'John', Age: 30, Job: 'Engineer' },
+                    { Name: 'Jane', Age: 25, Job: 'Doctor' },
+                    { Name: 'Doe', Age: 35, Job: 'Teacher' },
+                ]);
+            }, 100);
+        });
+    }
+
+    // 创建一个表格元素
+    const table = document.createElement('table');
+
+    // 创建表头
+    const thead = document.createElement('thead');
+    const tr = document.createElement('tr');
+
+    const headers = ['Name', 'Age', 'Job'];
+    headers.forEach(function(header) {
+        const th = document.createElement('th');
+        th.textContent = header;
+        tr.appendChild(th);
+    });
+    thead.appendChild(tr);
+    table.appendChild(thead);
+
+    // 创建表格数据
+    const tbody = document.createElement('tbody');
+
+    // 使用模拟的异步请求
+    fetchPosts().then(data => {
+        data.forEach(function(row) {
+            const tr = document.createElement('tr');
+            Object.values(row).forEach(function(cell) {
+                const td = document.createElement('td');
+                td.textContent = cell;
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+
+        // 将表格添加到页面中
+        document.body.appendChild(table);
+    });
+</script>
+</body>
+</html>
