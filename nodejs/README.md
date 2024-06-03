@@ -13,7 +13,8 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 yum install -y nodejs
 
 # apt
-curl -fsSL https://deb.nodesource.com/setup_lts.x -o nodesource_setup.sh
+curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+sudo -E bash nodesource_setup.sh
 sudo apt install -y nodejs
 
 # mac安装node
