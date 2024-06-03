@@ -7,8 +7,12 @@ nodejs
 ```bash
 # 官方文档：https://github.com/nodesource/distributions
 # 查看最新版本安装方式：https://rpm.nodesource.com/
-# 示例如下：
+# 示例如下
+# rpm
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+# apt
+curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+
 yum install -y nodejs
 # mac安装node
 brew install node
