@@ -1,57 +1,72 @@
 <template>
   <div class="tabs">
-    <div class="tabs-nav">
-      <button
-          v-for="tab in tabs"
-          :key="tab.name"
-          :class="{ active: tab.name === activeTab }"
-          @click="selectTab(tab.name)"
+    <div class="tab-header">
+      <div
+          v-for="(tab, index) in tabs"
+          :key="index"
+          :class="{ active: activeTab === index }"
+          @click="changeTab(index)"
       >
-        {{ tab.label }}
-      </button>
+        {{ tab.title }}
+      </div>
     </div>
-    <div class="tabs-content">
-      <slot :activeTab="activeTab"></slot>
+    <div class="tab-content">
+      <div v-for="(tab, index) in tabs" :key="index" v-show="activeTab === index">
+        {{ tab.content }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeTab: null,
-      tabs: []
+  name: 'BaseTabs',
+  setup() {
+    const tabs = ref([
+      { title: 'Tab 1', content: 'Content for Tab 1' },
+      { title: 'Tab 2', content: 'Content for Tab 2' },
+      { title: 'Tab 3', content: 'Content for Tab 3' }
+    ]);
+    const activeTab = ref(0);
+
+    const changeTab = (index) => {
+      activeTab.value = index;
     };
-  },
-  methods: {
-    selectTab(tabName) {
-      this.activeTab = tabName;
-    },
-    addTab(tab) {
-      if (this.tabs.length === 0) {
-        this.activeTab = tab.name;
-      }
-      this.tabs.push(tab);
-    }
+
+    return {
+      tabs,
+      activeTab,
+      changeTab
+    };
   }
 };
 </script>
 
 <style scoped>
-.tabs-nav {
+.tabs {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.tab-header {
   display: flex;
-  border-bottom: 1px solid #ccc;
 }
-.tabs-nav button {
-  padding: 10px 20px;
+
+.tab-header div {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
   cursor: pointer;
+  background-color: #f0f0f0;
 }
-.tabs-nav button.active {
-  border-bottom: 2px solid #42b983;
-  color: #42b983;
+
+.tab-header div.active {
+  background-color: #ccc;
 }
-.tabs-content {
+
+.tab-content div {
   padding: 20px;
   border: 1px solid #ccc;
 }
